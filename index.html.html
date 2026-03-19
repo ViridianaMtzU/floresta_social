@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>✿ FlorestaSpace ✿ ~ mi perfil ~</title>
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&family=Lato:wght@300;400;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --cream: #fdf6e3;
+    --rose: #d4a0a0;
+    --sage: #8aab8a;
+    --mushroom: #c4a882;
+    --bark: #7a5c3e;
+    --lavender: #c4b3d4;
+    --petal: #f0d6d6;
+    --moss: #5a7a5a;
+    --linen: #ede0cc;
+    --text: #4a3728;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--cream);
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Ccircle cx='30' cy='30' r='1.5' fill='%238aab8a' opacity='0.3'/%3E%3Ccircle cx='10' cy='10' r='1' fill='%23d4a0a0' opacity='0.25'/%3E%3Ccircle cx='50' cy='50' r='1' fill='%23d4a0a0' opacity='0.25'/%3E%3C/svg%3E");
+    font-family: 'Lato', sans-serif;
+    color: var(--text);
+    min-height: 100vh;
+    cursor: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='4' fill='%23d4a0a0'/%3E%3Cpath d='M12 2 L13 7 L12 6 L11 7 Z' fill='%238aab8a'/%3E%3Cpath d='M12 22 L13 17 L12 18 L11 17 Z' fill='%238aab8a'/%3E%3Cpath d='M2 12 L7 13 L6 12 L7 11 Z' fill='%238aab8a'/%3E%3Cpath d='M22 12 L17 13 L18 12 L17 11 Z' fill='%238aab8a'/%3E%3C/svg%3E"), auto;
+  }
+
+  /* SCROLLBAR */
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: var(--linen); }
+  ::-webkit-scrollbar-thumb { background: var(--rose); border-radius: 5px; }
+
+  /* MARQUEE HEADER */
+  .marquee-bar {
+    background: linear-gradient(90deg, var(--sage), var(--moss), var(--sage));
+    color: var(--cream);
+    font-family: 'Satisfy', cursive;
+    font-size: 13px;
+    padding: 5px 0;
+    overflow: hidden;
+    white-space: nowrap;
+    letter-spacing: 2px;
+  }
+  .marquee-content {
+    display: inline-block;
+    animation: marquee 25s linear infinite;
+  }
+  @keyframes marquee {
+    0% { transform: translateX(100vw); }
+    100% { transform: translateX(-100%); }
+  }
+
+  /* NAV */
+  nav {
+    background: var(--linen);
+    border-bottom: 3px solid var(--rose);
+    padding: 8px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(180,130,130,0.2);
+  }
+  nav a {
+    color: var(--bark);
+    text-decoration: none;
+    font-family: 'Satisfy', cursive;
+    font-size: 15px;
+    margin: 0 12px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    transition: all 0.3s;
+  }
+  nav a:hover {
+    background: var(--petal);
+    color: var(--moss);
+    box-shadow: 0 0 0 2px var(--rose);
+  }
+
+  /* HEADER */
+  .site-header {
+    text-align: center;
+    padding: 30px 20px 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .site-header::before {
+    content: '🌿🌸🍄🌿🌸🍄🌿🌸🍄🌿🌸🍄🌿';
+    display: block;
+    font-size: 20px;
+    margin-bottom: 10px;
+    animation: sway 4s ease-in-out infinite;
+  }
+  @keyframes sway {
+    0%, 100% { letter-spacing: 2px; }
+    50% { letter-spacing: 5px; }
+  }
+  .site-title {
+    font-family: 'Pacifico', cursive;
+    font-size: clamp(36px, 7vw, 72px);
+    color: var(--moss);
+    text-shadow: 3px 3px 0px var(--rose), 6px 6px 0px rgba(138,171,138,0.3);
+    animation: titlePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+  }
+  @keyframes titlePop {
+    0% { transform: scale(0.5) rotate(-5deg); opacity: 0; }
+    100% { transform: scale(1) rotate(0deg); opacity: 1; }
+  }
+  .site-subtitle {
+    font-family: 'Satisfy', cursive;
+    font-size: 18px;
+    color: var(--rose);
+    margin-top: 5px;
+  }
+
+  /* LAYOUT */
+  .layout {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+    display: grid;
+    grid-template-columns: 250px 1fr 220px;
+    gap: 15px;
+    align-items: start;
+  }
+
+  /* PANELS */
+  .panel {
+    background: rgba(255,255,255,0.75);
+    border: 2px solid var(--rose);
+    border-radius: 12px;
+    overflow: hidden;
+    backdrop-filter: blur(4px);
+    box-shadow: 4px 4px 0px var(--mushroom), 0 0 20px rgba(212,160,160,0.15);
+    transition: transform 0.2s;
+    animation: fadeIn 0.6s ease forwards;
+    opacity: 0;
+  }
+  .panel:hover { transform: translateY(-2px); }
+  @keyframes fadeIn {
+    to { opacity: 1; }
+  }
+
+  .panel-header {
+    background: linear-gradient(135deg, var(--rose), var(--lavender));
+    color: white;
+    font-family: 'Satisfy', cursive;
+    font-size: 16px;
+    padding: 8px 12px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .panel-body { padding: 12px; }
+
+  /* PROFILE SIDEBAR */
+  .profile-pic-wrap {
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  .profile-pic {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 4px solid var(--rose);
+    background: linear-gradient(135deg, var(--petal), var(--lavender));
+    margin: 0 auto 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 60px;
+    box-shadow: 0 0 0 6px var(--linen), 0 0 0 8px var(--rose);
+    animation: glow 3s ease-in-out infinite;
+  }
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 0 6px var(--linen), 0 0 0 8px var(--rose); }
+    50% { box-shadow: 0 0 0 6px var(--linen), 0 0 0 8px var(--rose), 0 0 20px var(--lavender); }
+  }
+  .profile-name {
+    font-family: 'Satisfy', cursive;
+    font-size: 20px;
+    color: var(--moss);
+  }
+  .profile-tagline {
+    font-size: 11px;
+    color: var(--mushroom);
+    font-style: italic;
+    margin: 3px 0;
+  }
+  .online-badge {
+    display: inline-block;
+    background: var(--sage);
+    color: white;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 10px;
+    margin: 4px 0;
+  }
+  .profile-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+    margin: 10px 0;
+  }
+  .stat-box {
+    background: var(--petal);
+    border-radius: 8px;
+    text-align: center;
+    padding: 6px;
+    border: 1px solid var(--rose);
+  }
+  .stat-num {
+    font-family: 'Satisfy', cursive;
+    font-size: 18px;
+    color: var(--moss);
+  }
+  .stat-label {
+    font-size: 9px;
+    color: var(--mushroom);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+
+  /* BUTTONS */
+  .btn {
+    display: block;
+    width: 100%;
+    padding: 7px;
+    border-radius: 20px;
+    border: 2px solid var(--rose);
+    background: white;
+    color: var(--bark);
+    font-family: 'Satisfy', cursive;
+    font-size: 14px;
+    cursor: pointer;
+    margin: 4px 0;
+    transition: all 0.2s;
+    text-align: center;
+  }
+  .btn:hover {
+    background: var(--petal);
+    transform: scale(1.03);
+    box-shadow: 2px 2px 0 var(--rose);
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--rose), var(--lavender));
+    color: white;
+    border-color: transparent;
+  }
+  .btn-primary:hover { background: linear-gradient(135deg, var(--lavender), var(--rose)); }
+
+  /* MOOD */
+  .mood-section {
+    background: var(--petal);
+    border-radius: 8px;
+    padding: 8px;
+    margin: 8px 0;
+    border-left: 3px solid var(--lavender);
+    font-size: 12px;
+  }
+  .mood-label { font-weight: 700; color: var(--moss); font-size: 10px; text-transform: uppercase; }
+
+  /* MUSIC PLAYER */
+  .music-player {
+    background: linear-gradient(135deg, var(--bark), var(--moss));
+    border-radius: 10px;
+    padding: 10px;
+    color: var(--cream);
+    text-align: center;
+    margin: 8px 0;
+  }
+  .music-title { font-family: 'Satisfy', cursive; font-size: 13px; }
+  .music-sub { font-size: 10px; opacity: 0.8; }
+  .music-controls { margin-top: 8px; display: flex; justify-content: center; gap: 10px; }
+  .music-btn {
+    background: rgba(255,255,255,0.2);
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    color: white;
+    cursor: pointer;
+    font-size: 12px;
+    transition: background 0.2s;
+  }
+  .music-btn:hover { background: rgba(255,255,255,0.4); }
+  .music-bar {
+    height: 3px;
+    background: rgba(255,255,255,0.3);
+    border-radius: 2px;
+    margin-top: 8px;
+    position: relative;
+    overflow: hidden;
+  }
+  .music-progress {
+    height: 100%;
+    background: var(--rose);
+    border-radius: 2px;
+    width: 35%;
+    animation: progress 30s linear infinite;
+  }
+  @keyframes progress {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+
+  /* MAIN FEED */
+  .post-box {
+    background: var(--linen);
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 8px;
+    border: 1px solid #e8d5c0;
+  }
+  .post-header {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 8px;
+  }
+  .post-avatar {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 2px solid var(--rose);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    background: var(--petal);
+    flex-shrink: 0;
+  }
+  .post-user { font-family: 'Satisfy', cursive; font-size: 14px; color: var(--moss); }
+  .post-time { font-size: 10px; color: var(--mushroom); }
+  .post-content { font-size: 13px; line-height: 1.6; }
+  .post-image {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 8px 0;
+    background: linear-gradient(135deg, var(--petal), var(--lavender), var(--sage));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 50px;
+  }
+  .post-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+  }
+  .post-action {
+    background: none;
+    border: 1px solid var(--rose);
+    border-radius: 20px;
+    padding: 3px 10px;
+    font-size: 11px;
+    cursor: pointer;
+    color: var(--bark);
+    transition: all 0.2s;
+    font-family: 'Satisfy', cursive;
+  }
+  .post-action:hover {
+    background: var(--petal);
+    transform: scale(1.05);
+  }
+
+  /* WRITE POST */
+  .write-post {
+    background: white;
+    border: 2px solid var(--lavender);
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 12px;
+  }
+  .write-post textarea {
+    width: 100%;
+    border: 1px solid var(--rose);
+    border-radius: 8px;
+    padding: 8px;
+    font-family: 'Lato', sans-serif;
+    font-size: 13px;
+    resize: none;
+    background: var(--cream);
+    color: var(--text);
+    height: 60px;
+  }
+  .write-post textarea:focus { outline: none; border-color: var(--lavender); }
+  .write-actions { display: flex; justify-content: space-between; align-items: center; margin-top: 6px; }
+  .emoji-row { font-size: 18px; letter-spacing: 5px; }
+
+  /* RIGHT SIDEBAR */
+  .friends-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5px;
+  }
+  .friend-thumb {
+    width: 100%;
+    aspect-ratio: 1;
+    border-radius: 8px;
+    border: 2px solid var(--linen);
+    background: var(--petal);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    cursor: pointer;
+    transition: all 0.2s;
+    position: relative;
+    overflow: hidden;
+  }
+  .friend-thumb:hover {
+    border-color: var(--rose);
+    transform: scale(1.08);
+  }
+
+  /* COMMENTS */
+  .comment {
+    border-top: 1px solid var(--linen);
+    padding: 6px 0;
+    font-size: 12px;
+    display: flex;
+    gap: 6px;
+    align-items: flex-start;
+  }
+  .comment-avatar { font-size: 16px; }
+  .comment-user { font-family: 'Satisfy', cursive; color: var(--moss); font-size: 12px; }
+
+  /* GLITTER TEXT */
+  @keyframes glitter {
+    0% { color: var(--rose); }
+    25% { color: var(--lavender); }
+    50% { color: var(--sage); }
+    75% { color: var(--mushroom); }
+    100% { color: var(--rose); }
+  }
+  .glitter { animation: glitter 2s linear infinite; font-weight: 700; }
+
+  /* DIVIDER */
+  .divider {
+    text-align: center;
+    color: var(--rose);
+    font-size: 18px;
+    margin: 8px 0;
+    letter-spacing: 8px;
+  }
+
+  /* TESTIMONIALS */
+  .testimonial {
+    background: var(--petal);
+    border-radius: 8px;
+    padding: 8px;
+    margin: 6px 0;
+    font-size: 12px;
+    border-left: 3px solid var(--lavender);
+    position: relative;
+  }
+  .testimonial::before {
+    content: '"';
+    font-family: 'Satisfy', cursive;
+    font-size: 30px;
+    color: var(--rose);
+    position: absolute;
+    top: -5px;
+    left: 5px;
+    opacity: 0.5;
+  }
+  .testimonial-text { padding-left: 15px; font-style: italic; }
+  .testimonial-from { font-family: 'Satisfy', cursive; color: var(--moss); text-align: right; font-size: 11px; }
+
+  /* BLINKIES */
+  .blinkies { text-align: center; margin: 8px 0; }
+  .blinky {
+    display: inline-block;
+    background: linear-gradient(90deg, var(--rose), var(--lavender));
+    color: white;
+    font-size: 10px;
+    padding: 2px 6px;
+    border-radius: 3px;
+    margin: 2px;
+    animation: blink 1s step-start infinite;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  .blinky:nth-child(2) { animation-delay: 0.3s; }
+  .blinky:nth-child(3) { animation-delay: 0.6s; }
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
+
+  /* SPARKLE CURSOR TRAIL (JS) */
+  .sparkle {
+    position: fixed;
+    pointer-events: none;
+    font-size: 16px;
+    z-index: 9999;
+    animation: sparkle-fade 0.8s forwards;
+  }
+  @keyframes sparkle-fade {
+    0% { opacity: 1; transform: translateY(0) scale(1); }
+    100% { opacity: 0; transform: translateY(-30px) scale(0.3); }
+  }
+
+  /* PHOTO COLLAGE */
+  .photo-strip {
+    display: flex;
+    gap: 4px;
+    overflow-x: auto;
+    padding: 4px;
+  }
+  .photo-item {
+    min-width: 80px;
+    height: 80px;
+    border-radius: 6px;
+    border: 2px solid var(--rose);
+    background: linear-gradient(135deg, var(--petal), var(--lavender));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 35px;
+    flex-shrink: 0;
+    transition: transform 0.2s;
+    cursor: pointer;
+  }
+  .photo-item:hover { transform: scale(1.05) rotate(2deg); }
+
+  /* NOTIFICATION BUBBLE */
+  .notif {
+    background: var(--rose);
+    color: white;
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    font-size: 9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    animation: bounce 1s ease infinite;
+  }
+  @keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+  }
+
+  /* ABOUT INFO */
+  .info-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    padding: 3px 0;
+    border-bottom: 1px dashed var(--linen);
+  }
+  .info-label { color: var(--mushroom); font-weight: 700; }
+  .info-val { color: var(--text); }
+
+  /* FOOTER */
+  footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 30px;
+    font-family: 'Satisfy', cursive;
+    color: var(--mushroom);
+    font-size: 13px;
+    border-top: 2px dashed var(--rose);
+  }
+  footer .hearts { animation: glitter 3s linear infinite; }
+
+  /* ANIMATION DELAYS */
+  .panel:nth-child(1) { animation-delay: 0.1s; }
+  .panel:nth-child(2) { animation-delay: 0.2s; }
+  .panel:nth-child(3) { animation-delay: 0.3s; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    .layout { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- MARQUEE -->
+<div class="marquee-bar">
+  <span class="marquee-content">
+    ✿ bienvenida a FlorestaSpace ✿ donde cada momento florece ✿ agrega a tus amigos ✿ personaliza tu perfil ✿ sube tus fotos ✿ escribe en mi muro ✿ la vida es un jardín ✿ 
+    ✿ bienvenida a FlorestaSpace ✿ donde cada momento florece ✿ agrega a tus amigos ✿ personaliza tu perfil ✿ sube tus fotos ✿ escribe en mi muro ✿ la vida es un jardín ✿
+  </span>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#">🏠 Inicio</a>
+  <a href="#">👤 Mi Perfil</a>
+  <a href="#">📬 Mensajes <span class="notif">3</span></a>
+  <a href="#">👥 Amigos</a>
+  <a href="#">📷 Fotos</a>
+  <a href="#">🎵 Música</a>
+  <a href="#">⚙️ Ajustes</a>
+</nav>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="site-title">✿ FlorestaSpace ✿</div>
+  <div class="site-subtitle">~ donde los sueños crecen como flores silvestres ~</div>
+</header>
+
+<!-- MAIN LAYOUT -->
+<div class="layout">
+
+  <!-- LEFT SIDEBAR: PERFIL -->
+  <aside>
+    <div class="panel" style="animation-delay:0.1s">
+      <div class="panel-header">🌸 Mi Perfil</div>
+      <div class="panel-body">
+        <div class="profile-pic-wrap">
+          <div class="profile-pic">🧚</div>
+          <div class="profile-name">xX_roseblossom_Xx</div>
+          <div class="profile-tagline">~ soñadora & coleccionista de hongos ~</div>
+          <div class="online-badge">● en línea</div>
+        </div>
+        
+        <div class="mood-section">
+          <div class="mood-label">✨ mi mood hoy</div>
+          <div>🍄 enamorada del otoño y el té de manzanilla uwu</div>
+        </div>
+        
+        <div class="profile-stats">
+          <div class="stat-box">
+            <div class="stat-num">482</div>
+            <div class="stat-label">Amigos</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">1.2k</div>
+            <div class="stat-label">Visitas</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">67</div>
+            <div class="stat-label">Fotos</div>
+          </div>
+          <div class="stat-box">
+            <div class="stat-num">234</div>
+            <div class="stat-label">Posts</div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary">💌 Agregar amiga</button>
+        <button class="btn">📝 Escribir en mi muro</button>
+        <button class="btn">📩 Enviar mensaje</button>
+      </div>
+    </div>
+
+    <div class="panel" style="animation-delay:0.2s; margin-top:12px;">
+      <div class="panel-header">🎵 Canción de mi corazón</div>
+      <div class="panel-body">
+        <div class="music-player">
+          <div class="music-title">🍃 Wildflower</div>
+          <div class="music-sub">The 5th Dimension</div>
+          <div class="music-controls">
+            <button class="music-btn">⏮</button>
+            <button class="music-btn">⏸</button>
+            <button class="music-btn">⏭</button>
+          </div>
+          <div class="music-bar"><div class="music-progress"></div></div>
+        </div>
+        <div style="font-size:11px; color:var(--mushroom); text-align:center; font-style:italic;">🎶 escuchando en repeat desde las 3am 🎶</div>
+      </div>
+    </div>
+
+    <div class="panel" style="animation-delay:0.3s; margin-top:12px;">
+      <div class="panel-header">🍄 Sobre mí</div>
+      <div class="panel-body">
+        <div class="info-row"><span class="info-label">Edad:</span><span class="info-val">19 🌸</span></div>
+        <div class="info-row"><span class="info-label">Ciudad:</span><span class="info-val">entre los árboles 🌳</span></div>
+        <div class="info-row"><span class="info-label">Relación:</span><span class="info-val">enamorada 💕</span></div>
+        <div class="info-row"><span class="info-label">Signo:</span><span class="info-val">Piscis ♓</span></div>
+        <div class="info-row"><span class="info-label">Intereses:</span><span class="info-val">hongos, té, libros 📚</span></div>
+        <br>
+        <div class="blinkies">
+          <span class="blinky">COTTAGECORE</span>
+          <span class="blinky">SOFT LIFE</span>
+          <span class="blinky">NATURE</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- CENTRO: FEED -->
+  <main>
+    <!-- WRITE POST -->
+    <div class="write-post">
+      <div style="font-family:'Satisfy',cursive; color:var(--moss); margin-bottom:6px;">✏️ ¿qué hay en tu jardín hoy?</div>
+      <textarea placeholder="cuéntame lo que piensas... 🌿"></textarea>
+      <div class="write-actions">
+        <div class="emoji-row">🌸🍄🌿🦋🌙</div>
+        <button class="btn btn-primary" style="width:auto; padding:6px 18px;">Publicar ✿</button>
+      </div>
+    </div>
+
+    <!-- POSTS -->
+    <div class="panel" style="animation-delay:0.15s">
+      <div class="panel-header">🌿 Mi Muro</div>
+      <div class="panel-body">
+
+        <!-- POST 1 -->
+        <div class="post-box">
+          <div class="post-header">
+            <div class="post-avatar">🧚</div>
+            <div>
+              <div class="post-user">xX_roseblossom_Xx</div>
+              <div class="post-time">hace 23 minutos · 🌿 Bosque encantado</div>
+            </div>
+          </div>
+          <div class="post-content">
+            hoy encontré el hongo más perfecto del mundo mientras caminaba por el bosque con mi abuela 🍄✨ me siento como la protagonista de un cuento de hadas... 
+            la vida es tan bonita cuando te detienes a mirar los detalles pequeñitos 🌸💕
+            <br><br>
+            <span class="glitter">*~*~* la naturaleza es magia *~*~*</span>
+          </div>
+          <div class="post-image">🍄🌿🌸</div>
+          <div class="post-actions">
+            <button class="post-action">🌸 47 me encanta</button>
+            <button class="post-action">💬 12 comentarios</button>
+            <button class="post-action">✨ compartir</button>
+          </div>
+          <div class="comment">
+            <div class="comment-avatar">🌺</div>
+            <div><div class="comment-user">moonflower_daisy:</div> <div>ay nooo qué lindo!! yo también quiero ir a buscar hongos contigo 🥺💕</div></div>
+          </div>
+          <div class="comment">
+            <div class="comment-avatar">🍃</div>
+            <div><div class="comment-user">fern_and_tea:</div> <div>AMIGAAA te envidio tanto!! yo aquí en la ciudad llorando lol 😭🌿</div></div>
+          </div>
+        </div>
+
+        <div class="divider">✿ · ✿ · ✿</div>
+
+        <!-- POST 2 -->
+        <div class="post-box">
+          <div class="post-header">
+            <div class="post-avatar">🌺</div>
+            <div>
+              <div class="post-user">moonflower_daisy</div>
+              <div class="post-time">hace 1 hora · 🏡 Mi casita</div>
+            </div>
+          </div>
+          <div class="post-content">
+            receta del día: pastel de lavanda y miel 🍯🌸 lo hice con las flores de mi jardín y resultó MÁGICO.
+            cuando lo saqué del horno la cocina olía como un sueño uwu 💜
+            <br><br>
+            si quieren la receta díganme en los comentarios!! 🥰
+          </div>
+          <div class="post-actions">
+            <button class="post-action">🌸 93 me encanta</button>
+            <button class="post-action">💬 28 comentarios</button>
+            <button class="post-action">✨ compartir</button>
+          </div>
+          <div class="comment">
+            <div class="comment-avatar">🧚</div>
+            <div><div class="comment-user">xX_roseblossom_Xx:</div> <div>YOOO QUIERO RECETA POR FAVOR 🥺🙏 me muero de ganas de hacerlo!!</div></div>
+          </div>
+        </div>
+
+        <div class="divider">✿ · ✿ · ✿</div>
+
+        <!-- POST 3 (con metroflog vibe - "foto del día") -->
+        <div class="post-box">
+          <div class="post-header">
+            <div class="post-avatar">🦋</div>
+            <div>
+              <div class="post-user">ivy_and_lace</div>
+              <div class="post-time">hace 3 horas · 📷 FOTO DEL DÍA</div>
+            </div>
+          </div>
+          <div class="post-content" style="text-align:center; font-family:'Satisfy',cursive; font-size:15px; color:var(--moss);">
+            ✿ foto del día ✿<br>
+            <span style="font-size:12px; color:var(--mushroom); font-family:'Lato',sans-serif;">"me tomé esta foto en el jardín de mi abuela ayer" 🌸</span>
+          </div>
+          <div class="post-image" style="font-size: 70px;">🧍‍♀️🌹</div>
+          <div style="text-align:center; font-size:11px; color:var(--mushroom); margin-bottom:8px;">
+            ⭐⭐⭐⭐⭐ · calificación promedio: 4.9
+          </div>
+          <div class="post-actions">
+            <button class="post-action">⭐ Calificar</button>
+            <button class="post-action">💬 56 comentarios</button>
+            <button class="post-action">❤️ 201 me gusta</button>
+          </div>
+        </div>
+
+        <!-- HI5 STYLE: CUMPLEAÑOS -->
+        <div class="post-box" style="background: linear-gradient(135deg, var(--petal), var(--lavender));">
+          <div style="text-align:center; font-family:'Satisfy',cursive; font-size:16px; color:var(--moss);">
+            🎂 ¡hoy es el cumpleaños de <strong>forest_fairy_girl</strong>! 🎂
+          </div>
+          <div style="text-align:center; margin:8px 0; font-size:11px; color:var(--bark);">
+            dale un saludo y haz que su día sea especial ✨
+          </div>
+          <button class="btn btn-primary" style="max-width:200px; margin:0 auto; display:block;">🎁 Enviar felicitación</button>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- RIGHT SIDEBAR -->
+  <aside>
+    <div class="panel" style="animation-delay:0.1s">
+      <div class="panel-header">👯 Mis Amigxs Top</div>
+      <div class="panel-body">
+        <div class="friends-grid">
+          <div class="friend-thumb" title="moonflower_daisy">🌺</div>
+          <div class="friend-thumb" title="fern_and_tea">🍃</div>
+          <div class="friend-thumb" title="ivy_and_lace">🦋</div>
+          <div class="friend-thumb" title="forest_fairy">🧚</div>
+          <div class="friend-thumb" title="mushroom_girl">🍄</div>
+          <div class="friend-thumb" title="lavender_dreams">💜</div>
+          <div class="friend-thumb" title="cozy_cottage">🏡</div>
+          <div class="friend-thumb" title="wildflower99">🌻</div>
+          <div class="friend-thumb" title="tea_witch">☕</div>
+        </div>
+        <div style="text-align:center; margin-top:8px;">
+          <a href="#" style="font-family:'Satisfy',cursive; font-size:12px; color:var(--moss);">ver todos mis amigos (482) ›</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="animation-delay:0.2s; margin-top:12px;">
+      <div class="panel-header">💌 Testimonios</div>
+      <div class="panel-body">
+        <div class="testimonial">
+          <div class="testimonial-text">la personita más dulce de todo floresta space 🌸 te quiero muchoooo</div>
+          <div class="testimonial-from">— moonflower_daisy</div>
+        </div>
+        <div class="testimonial">
+          <div class="testimonial-text">mi inspiración cottagecore favorita ✨🍄 cada foto tuya me da paz</div>
+          <div class="testimonial-from">— fern_and_tea</div>
+        </div>
+        <button class="btn" style="font-size:11px; margin-top:6px;">📝 Dejar testimonio</button>
+      </div>
+    </div>
+
+    <div class="panel" style="animation-delay:0.3s; margin-top:12px;">
+      <div class="panel-header">📷 Mis Fotos</div>
+      <div class="panel-body">
+        <div class="photo-strip">
+          <div class="photo-item">🍄</div>
+          <div class="photo-item">🌸</div>
+          <div class="photo-item">🌿</div>
+          <div class="photo-item">☕</div>
+          <div class="photo-item">🦋</div>
+        </div>
+        <div style="text-align:center; margin-top:6px;">
+          <a href="#" style="font-family:'Satisfy',cursive; font-size:11px; color:var(--moss);">ver álbum completo (67 fotos) ›</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="animation-delay:0.4s; margin-top:12px;">
+      <div class="panel-header">🌙 Visitantes recientes</div>
+      <div class="panel-body">
+        <div style="font-size:12px;">
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dashed var(--linen);">
+            <span>🌺 moonflower_daisy</span><span style="color:var(--mushroom);font-size:10px;">hace 5min</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dashed var(--linen);">
+            <span>🍃 fern_and_tea</span><span style="color:var(--mushroom);font-size:10px;">hace 1h</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;border-bottom:1px dashed var(--linen);">
+            <span>🦋 ivy_and_lace</span><span style="color:var(--mushroom);font-size:10px;">hace 2h</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;padding:3px 0;">
+            <span>☕ tea_witch</span><span style="color:var(--mushroom);font-size:10px;">hace 3h</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="animation-delay:0.5s; margin-top:12px;">
+      <div class="panel-header">✨ Estado de ánimo</div>
+      <div class="panel-body" style="text-align:center;">
+        <div style="font-size:40px; margin:5px 0;">🌿</div>
+        <div style="font-family:'Satisfy',cursive; font-size:13px; color:var(--moss);">tranquila y soñadora</div>
+        <div style="font-size:10px; color:var(--mushroom); font-style:italic;">"el bosque es mi hogar" 🍄</div>
+        <div style="margin-top:10px; display:flex; flex-wrap:wrap; gap:4px; justify-content:center;">
+          <span style="background:var(--petal);border-radius:10px;padding:2px 8px;font-size:10px;border:1px solid var(--rose);">#cottagecore</span>
+          <span style="background:var(--petal);border-radius:10px;padding:2px 8px;font-size:10px;border:1px solid var(--rose);">#nature</span>
+          <span style="background:var(--petal);border-radius:10px;padding:2px 8px;font-size:10px;border:1px solid var(--rose);">#softlife</span>
+          <span style="background:var(--petal);border-radius:10px;padding:2px 8px;font-size:10px;border:1px solid var(--rose);">#mushrooms</span>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="hearts">✿ ❀ ✾ ❁ ✿ ❀ ✾ ❁ ✿</div>
+  <div style="margin:6px 0;">FlorestaSpace © 2007-2012 · hecho con amor y té de manzanilla</div>
+  <div style="font-size:10px; color:var(--rose);">mejor visto en Internet Explorer 7 · resolución 1024x768 · 🌿 go green 🌿</div>
+  <div class="hearts">✿ ❀ ✾ ❁ ✿ ❀ ✾ ❁ ✿</div>
+</footer>
+
+<!-- SPARKLE JS -->
+<script>
+  const sparkles = ['✿', '❀', '🌸', '✨', '🍄', '🌿', '🦋', '💕', '⭐', '🌺'];
+  
+  document.addEventListener('mousemove', (e) => {
+    if (Math.random() > 0.85) {
+      const el = document.createElement('div');
+      el.className = 'sparkle';
+      el.textContent = sparkles[Math.floor(Math.random() * sparkles.length)];
+      el.style.left = e.clientX + 'px';
+      el.style.top = e.clientY + 'px';
+      document.body.appendChild(el);
+      setTimeout(() => el.remove(), 800);
+    }
+  });
+
+  // Post action reactions
+  document.querySelectorAll('.post-action').forEach(btn => {
+    btn.addEventListener('click', function() {
+      if (this.textContent.includes('me encanta') || this.textContent.includes('me gusta')) {
+        this.style.background = 'var(--petal)';
+        this.style.borderColor = 'var(--rose)';
+        // mini confetti
+        for (let i = 0; i < 5; i++) {
+          setTimeout(() => {
+            const s = document.createElement('div');
+            s.className = 'sparkle';
+            s.textContent = '🌸';
+            const rect = this.getBoundingClientRect();
+            s.style.left = (rect.left + Math.random() * rect.width) + 'px';
+            s.style.top = rect.top + 'px';
+            document.body.appendChild(s);
+            setTimeout(() => s.remove(), 800);
+          }, i * 100);
+        }
+      }
+    });
+  });
+
+  // Music controls
+  let playing = true;
+  const progress = document.querySelector('.music-progress');
+  document.querySelectorAll('.music-btn').forEach((btn, i) => {
+    if (i === 1) {
+      btn.addEventListener('click', () => {
+        playing = !playing;
+        btn.textContent = playing ? '⏸' : '▶️';
+        progress.style.animationPlayState = playing ? 'running' : 'paused';
+      });
+    }
+  });
+</script>
+
+</body>
+</html>
